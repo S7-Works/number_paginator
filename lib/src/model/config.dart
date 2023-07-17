@@ -7,6 +7,9 @@ class NumberPaginatorUIConfig {
   /// The height of the number paginator.
   final double height;
 
+  /// To allow show shape on the dots made by the number paginator
+  final bool dotsHaveShape;
+
   /// The shape of the [PaginatorButton]s.
   final OutlinedBorder? buttonShape;
 
@@ -54,5 +57,6 @@ class NumberPaginatorUIConfig {
     this.mode = ContentDisplayMode.numbers,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.contentPadding,
+    this.dotsHaveShape = true,
   });
 }

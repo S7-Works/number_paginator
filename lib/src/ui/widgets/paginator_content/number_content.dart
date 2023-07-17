@@ -78,13 +78,16 @@ class NumberContent extends StatelessWidget {
           // padding: const EdgeInsets.all(4.0),
           margin: const EdgeInsets.all(8.0),
           alignment: Alignment.bottomCenter,
-          decoration: ShapeDecoration(
-            shape: InheritedNumberPaginator.of(context).config.buttonShape ??
-                const CircleBorder(),
-            color: InheritedNumberPaginator.of(context)
-                .config
-                .buttonUnselectedBackgroundColor,
-          ),
+          decoration: !InheritedNumberPaginator.of(context).config.dotsHaveShape
+              ? null
+              : ShapeDecoration(
+                  shape:
+                      InheritedNumberPaginator.of(context).config.buttonShape ??
+                          const CircleBorder(),
+                  color: InheritedNumberPaginator.of(context)
+                      .config
+                      .buttonUnselectedBackgroundColor,
+                ),
           child: AutoSizeText(
             "...",
             style: TextStyle(
