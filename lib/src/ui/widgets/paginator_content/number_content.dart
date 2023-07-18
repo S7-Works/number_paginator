@@ -19,11 +19,15 @@ class NumberContent extends StatelessWidget {
       builder: (context, constraints) {
         /// Buttons have an aspect ratio of 1:1. Therefore use paginator height as
         /// button width.
+        if (constraints.maxHeight <= 0) {
+          // You can return a placeholder widget or an empty container here, depending on your requirements.
+          return Container();
+        }
         var buttonWidth = constraints.maxHeight;
         var availableSpots = (constraints.maxWidth / buttonWidth).floor();
 
         return Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _buildPageButton(context, 0),
             if (_frontDotsShouldShow(context, availableSpots))
