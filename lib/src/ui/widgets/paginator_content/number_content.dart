@@ -27,7 +27,7 @@ class NumberContent extends StatelessWidget {
         var availableSpots = (constraints.maxWidth / buttonWidth).floor();
 
         return Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _buildPageButton(context, 0),
             if (_frontDotsShouldShow(context, availableSpots))
