@@ -9,7 +9,7 @@ class NumbersPage extends StatefulWidget {
 }
 
 class _NumbersPageState extends State<NumbersPage> {
-  final int _numPages = 10;
+  final int _numPages = 2;
   int _currentPage = 0;
 
   @override
@@ -30,14 +30,18 @@ class _NumbersPageState extends State<NumbersPage> {
       bottomNavigationBar: Card(
         margin: EdgeInsets.zero,
         elevation: 4,
-        child: NumberPaginator(
-          // by default, the paginator shows numbers as center content
-          numberPages: _numPages,
-          onPageChange: (int index) {
-            setState(() {
-              _currentPage = index;
-            });
-          },
+        child: SizedBox(
+          width: 20,
+          child: NumberPaginator(
+            
+            // by default, the paginator shows numbers as center content
+            numberPages: _numPages,
+            onPageChange: (int index) {
+              setState(() {
+                _currentPage = index;
+              });
+            },
+          ),
         ),
       ),
     );
