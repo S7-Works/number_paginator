@@ -12,7 +12,7 @@ class DropDownContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<int>(
-      isExpanded: true,
+      isExpanded: false,
       value: currentPage,
       selectedItemBuilder: (context) => List.generate(
         InheritedNumberPaginator.of(context).numberPages,
